@@ -1,0 +1,24 @@
+services:
+  chat_backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: websocket-chat-backend
+    ports:
+      - '81:8080'
+    restart: unless-stopped
+    networks:
+      - chat-network
+  chat_frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: websocket-chat-frontend
+    ports:
+      - '80:80'
+    restart: unless-stopped
+    networks:
+      - chat-network
+
+networks:
+  chat-network:

@@ -1,0 +1,46 @@
+{
+  "name": "websocket_chat_backend",
+  "version": "1.0.0",
+  "description": "A nodejs backend for the chat application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./build/index.js",
+    "build:dev": "rimraf build && tsc -p tsconfig.development.json",
+    "build:verify": "tsc --noEmit -p tsconfig.production.json",
+    "build:dist": "tsc -p tsconfig.production.json",
+    "build:dist:clean": "rimraf build",
+    "prettier": "prettier --write \"./**/*.ts\" --ignore-path .prettierignore",
+    "prettier:check": "prettier --check \"./**/*.ts\" --ignore-path .prettierignore",
+    "lint:ci": "eslint ./src --max-warnings 100"
+  },
+  "keywords": [
+    "nodejs",
+    "websocket",
+    "chat"
+  ],
+  "author": "Aleksandr Smirnov",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.14.0",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "prettier": "2.8.4",
+    "rimraf": "^4.1.2",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@types/websocket": "^1.0.5",
+    "fp-ts": "^2.13.1",
+    "io-ts": "^2.2.20",
+    "nanoid": "^3.3.4",
+    "tiny-typed-emitter": "^2.1.0",
+    "websocket": "^1.0.34",
+    "winston": "^3.8.2"
+  }
+}

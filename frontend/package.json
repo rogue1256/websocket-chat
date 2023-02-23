@@ -1,0 +1,227 @@
+{
+  "name": "websocket_chat_frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@fontsource/roboto": "^4.5.8",
+    "@hookform/resolvers": "^2.9.11",
+    "@mui/icons-material": "^5.11.9",
+    "@mui/material": "^5.11.9",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/lodash": "^4.14.191",
+    "@types/node": "^16.18.12",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.10",
+    "fp-ts": "^2.13.1",
+    "io-ts": "^2.2.20",
+    "lodash": "^4.17.21",
+    "mobx": "^6.8.0",
+    "mobx-react-lite": "^3.4.0",
+    "nanoid": "^3.3.4",
+    "prettier": "^2.8.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.1",
+    "react-scripts": "5.0.1",
+    "tiny-typed-emitter": "^2.1.0",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prettier:check": "prettier --check \"./**/*.ts\" --ignore-path .prettierignore"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "src/**/!(*.spec).@(ts|tsx)"
+        ],
+        "parser": "@typescript-eslint/parser",
+        "parserOptions": {
+          "ecmaVersion": "latest",
+          "sourceType": "module",
+          "project": [
+            "./tsconfig.json"
+          ],
+          "tsconfigRootDir": "./"
+        },
+        "rules": {
+          "no-magic-numbers": "off",
+          "@typescript-eslint/no-magic-numbers": [
+            "warn",
+            {
+              "ignore": [],
+              "ignoreArrayIndexes": true,
+              "ignoreDefaultValues": true,
+              "enforceConst": true,
+              "detectObjects": false,
+              "ignoreEnums": true,
+              "ignoreNumericLiteralTypes": true,
+              "ignoreReadonlyClassProperties": true,
+              "ignoreTypeIndexes": true
+            }
+          ],
+          "no-await-in-loop": "warn",
+          "no-constant-binary-expression": "warn",
+          "no-constructor-return": "warn",
+          "no-new-native-nonconstructor": "warn",
+          "no-promise-executor-return": "warn",
+          "no-unreachable-loop": "warn",
+          "no-unused-private-class-members": "warn",
+          "complexity": [
+            "warn",
+            10
+          ],
+          "consistent-this": "warn",
+          "curly": [
+            "error",
+            "all"
+          ],
+          "default-case-last": "error",
+          "guard-for-in": "error",
+          "max-classes-per-file": [
+            "error",
+            1
+          ],
+          "max-depth": [
+            "warn",
+            4
+          ],
+          "max-lines": [
+            "warn",
+            400
+          ],
+          "max-lines-per-function": [
+            "warn",
+            75
+          ],
+          "max-params": [
+            "warn",
+            5
+          ],
+          "no-alert": "warn",
+          "no-bitwise": "warn",
+          "no-console": "warn",
+          "no-else-return": "warn",
+          "no-implicit-coercion": "warn",
+          "no-new": "warn",
+          "no-proto": "error",
+          "no-return-assign": "error",
+          "no-unneeded-ternary": "warn",
+          "no-useless-return": "error",
+          "no-var": "error",
+          "prefer-const": [
+            "error",
+            {
+              "destructuring": "any",
+              "ignoreReadBeforeAssign": false
+            }
+          ],
+          "prefer-exponentiation-operator": "warn",
+          "prefer-numeric-literals": "error",
+          "prefer-object-spread": "error",
+          "prefer-promise-reject-errors": "error",
+          "prefer-spread": "error",
+          "yoda": "error",
+          "@typescript-eslint/array-type": [
+            "error",
+            {
+              "default": "array-simple",
+              "readonly": "array-simple"
+            }
+          ],
+          "@typescript-eslint/ban-types": [
+            "off"
+          ],
+          "@typescript-eslint/consistent-generic-constructors": "error",
+          "@typescript-eslint/consistent-indexed-object-style": "error",
+          "@typescript-eslint/consistent-type-definitions": "off",
+          "@typescript-eslint/explicit-function-return-type": [
+            "error",
+            {
+              "allowedNames": []
+            }
+          ],
+          "@typescript-eslint/no-confusing-non-null-assertion": "error",
+          "@typescript-eslint/no-duplicate-enum-values": "warn",
+          "@typescript-eslint/no-dynamic-delete": "error",
+          "@typescript-eslint/no-inferrable-types": [
+            "error",
+            {
+              "ignoreParameters": true,
+              "ignoreProperties": true
+            }
+          ],
+          "@typescript-eslint/no-require-imports": "error",
+          "@typescript-eslint/no-unnecessary-condition": [
+            "warn",
+            {
+              "allowConstantLoopConditions": true,
+              "allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing": false
+            }
+          ],
+          "@typescript-eslint/prefer-enum-initializers": "warn",
+          "@typescript-eslint/prefer-includes": "error",
+          "@typescript-eslint/prefer-nullish-coalescing": "warn",
+          "@typescript-eslint/prefer-readonly": "warn",
+          "@typescript-eslint/prefer-reduce-type-parameter": "error",
+          "@typescript-eslint/prefer-string-starts-ends-with": "warn",
+          "@typescript-eslint/require-array-sort-compare": "warn",
+          "@typescript-eslint/switch-exhaustiveness-check": "warn",
+          "@typescript-eslint/unbound-method": [
+            "error",
+            {
+              "ignoreStatic": true
+            }
+          ],
+          "default-param-last": "off",
+          "@typescript-eslint/default-param-last": "error",
+          "@typescript-eslint/no-dupe-class-members": "off",
+          "no-empty-function": "off",
+          "@typescript-eslint/no-empty-function": [
+            "error",
+            {
+              "allow": [
+                "overrideMethods"
+              ]
+            }
+          ],
+          "no-extra-semi": "off",
+          "@typescript-eslint/no-extra-semi": "off",
+          "@typescript-eslint/no-implied-eval": "error",
+          "@typescript-eslint/no-loop-func": "warn",
+          "no-loss-of-precision": "off",
+          "@typescript-eslint/no-loss-of-precision": "error",
+          "require-await": "off",
+          "@typescript-eslint/require-await": "error"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
